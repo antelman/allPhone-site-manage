@@ -1,0 +1,147 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between">
+          <h3 class="align-self-center m-0">רשימת תת קטגוריות</h3>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-original-title="test"
+            data-target="#exampleModal"
+            (click)="open(content)">
+            הוסף
+          </button>
+          <ng-template #content let-modal>
+            <div class="modal-header">
+              <h5 class="modal-title f-w-600" id="exampleModalLabel">
+                תת קטגוריה חדשה
+              </h5>
+              <button
+                type="button"
+                class="close"
+                aria-label="Close"
+                (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form">
+                <div class="form-group">
+                  <label>קטגוריה</label>
+                  <select
+                    class="custom-select form-select"
+                    [(ngModel)]="subCategoryParent">
+                    <option *ngFor="let cat of categories" [value]="cat.$id">
+                      {{ cat.categoryName }}
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="validationCustom01" class="mb-1">שם:</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    [(ngModel)]="subCategoryName" />
+                </div>
+                <!-- <div class="form-group mb-0">
+                                          <label for="validationCustom02" class="mb-1">Category Image :</label>
+                                          <input class="form-control" id="validationCustom02" type="file">
+                                      </div> -->
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="addSubCategory(modal)">
+                הוסף
+              </button>
+              <button
+                class="btn btn-secondary"
+                type="button"
+                data-dismiss="modal"
+                (click)="modal.dismiss('Cross click')">
+                בטל
+              </button>
+            </div>
+          </ng-template>
+        </div>
+        <div class="card-body">
+          <div id="batchDelete" class="category-table custom-datatable">
+            <div class="table-responsive">
+              <!-- <form>
+                                  <div class="mb-3 row">
+                                      <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Full text search:</label>
+                                      <div class="col-xs-3 col-sm-auto">
+                                        <input id="table-complete-search" type="text" class="form-control" name="searchTerm"  [(ngModel)]="searchText" autocomplete="off">
+                                      </div>
+                                  </div>
+                                </form> -->
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th
+                      scope="col"
+                      sortable="product_name"
+                      (sort)="onSort($event)">
+                      שם
+                    </th>
+                    <th
+                      scope="col"
+                      sortable="product_name"
+                      (sort)="onSort($event)">
+                      קטגוריה ראשית
+                    </th>
+                    <th scope="col" sortable="price" (sort)="onSort($event)">
+                      תאריך הוספה
+                    </th>
+                    <th scope="col" sortable="status" (sort)="onSort($event)">
+                      נוצר ע"י
+                    </th>
+                    <!-- <th scope="col" sortable="category" (sort)="onSort($event)">Category</th> -->
+                    <th
+                      scope="col"
+                      sortable="population"
+                      (sort)="onSort($event)">
+                      פעולות
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let catgory of subCategories; let i = index">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ catgory.subCategoryName }}</td>
+                    <td>{{ catgory.categories.categoryName }}</td>
+                    <td>{{ catgory.$createdAt | date : "HH:mm dd/mm/yy" }}</td>
+                    <!-- <td><i class='fa fa-circle {{catgory.status}} f-12'></i></td> -->
+                    <td>{{ catgory.createdBy }}</td>
+                    <td>
+                      <a href="javascript:void(0)"
+                        ><i class="fa fa-edit f-12"></i></a
+                      >&nbsp;
+                      <a href="javascript:void(0)"
+                        ><i class="fa fa-trash-o"></i
+                      ></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="d-flex justify-content-center p-2">
+                <ngb-pagination
+                  [collectionSize]="(total$ | async)!"
+                  [(page)]="service.page"
+                  [pageSize]="service.pageSize">
+                </ngb-pagination>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Container-fluid Ends-->
