@@ -7,30 +7,55 @@ import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.scss'],
-  providers: [NgbRatingConfig]
+  providers: [NgbRatingConfig],
 })
 export class ProductDetailComponent implements OnInit {
   public closeResult: string;
-  public counter: number = 1;
+  public counter = 1;
   currentRate = 8;
 
   public imagesRect: Image[] = [
-    new Image(0, { img: 'assets/images/pro3/2.jpg' }, { img: 'assets/images/pro3/1.jpg' }),
-    new Image(1, { img: 'assets/images/pro3/27.jpg' }, { img: 'assets/images/pro3/27.jpg' }),
-    new Image(2, { img: 'assets/images/pro3/1.jpg' }, { img: 'assets/images/pro3/1.jpg' }),
-    new Image(3, { img: 'assets/images/pro3/2.jpg' }, { img: 'assets/images/pro3/2.jpg' })]
+    new Image(
+      0,
+      { img: 'assets/images/pro3/2.jpg' },
+      { img: 'assets/images/pro3/1.jpg' }
+    ),
+    new Image(
+      1,
+      { img: 'assets/images/pro3/27.jpg' },
+      { img: 'assets/images/pro3/27.jpg' }
+    ),
+    new Image(
+      2,
+      { img: 'assets/images/pro3/1.jpg' },
+      { img: 'assets/images/pro3/1.jpg' }
+    ),
+    new Image(
+      3,
+      { img: 'assets/images/pro3/2.jpg' },
+      { img: 'assets/images/pro3/2.jpg' }
+    ),
+  ];
 
-  constructor(private modalService: NgbModal, config: NgbRatingConfig) {
+  constructor(
+    private modalService: NgbModal,
+    config: NgbRatingConfig
+  ) {
     config.max = 5;
     config.readonly = false;
   }
 
   open(content) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        result => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        reason => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
   }
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
@@ -50,7 +75,5 @@ export class ProductDetailComponent implements OnInit {
     this.counter -= 1;
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

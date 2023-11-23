@@ -15,7 +15,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     PagesRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    SharedModule
-  ]
+    SharedModule,
+  ],
 })
-export class PagesModule { }
+export class PagesModule {}

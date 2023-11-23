@@ -4,7 +4,7 @@ import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 @Component({
   selector: 'app-create-user',
   templateUrl: './create-user.component.html',
-  styleUrls: ['./create-user.component.scss']
+  styleUrls: ['./create-user.component.scss'],
 })
 export class CreateUserComponent implements OnInit {
   public accountForm: UntypedFormGroup;
@@ -22,15 +22,12 @@ export class CreateUserComponent implements OnInit {
       lname: [''],
       email: [''],
       password: [''],
-      confirmPwd: ['']
-    })
+      confirmPwd: [''],
+    });
   }
   createPermissionForm() {
-    this.permissionForm = this.formBuilder.group({
-    })
+    this.permissionForm = this.formBuilder.group({});
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

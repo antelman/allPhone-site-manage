@@ -5,7 +5,7 @@ import { FeatherIconsComponent } from './components/feather-icons/feather-icons.
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { ToggleFullscreenDirective } from "./directives/fullscreen.directive";
+import { ToggleFullscreenDirective } from './directives/fullscreen.directive';
 import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
 import { NavService } from './service/nav.service';
 import { WINDOW_PROVIDERS } from './service/windows.service';
@@ -24,13 +24,14 @@ import { NgbdSortableHeader } from './directives/NgbdSortableHeader';
     ContentLayoutComponent,
     BreadcrumbComponent,
     RightSidebarComponent,
-    NgbdSortableHeader
+    NgbdSortableHeader,
   ],
-  imports: [
-    CommonModule,
-    RouterModule
-  ],
+  imports: [CommonModule, RouterModule],
   providers: [NavService, TableService, WINDOW_PROVIDERS],
-  exports: [FeatherIconsComponent, ToggleFullscreenDirective,NgbdSortableHeader]
+  exports: [
+    FeatherIconsComponent,
+    ToggleFullscreenDirective,
+    NgbdSortableHeader,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

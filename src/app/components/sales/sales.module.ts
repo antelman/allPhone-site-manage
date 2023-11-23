@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-
   declarations: [OrdersComponent, TransactionsComponent],
   imports: [
     CommonModule,
@@ -16,6 +15,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     NgbModule,
     FormsModule,
     SharedModule,
-  ]
+  ],
 })
-export class SalesModule { }
+export class SalesModule {}

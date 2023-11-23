@@ -1,7 +1,10 @@
 import { DecimalPipe } from '@angular/common';
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Observable } from 'rxjs';
-import { NgbdSortableHeader, SortEvent } from 'src/app/shared/directives/NgbdSortableHeader';
+import {
+  NgbdSortableHeader,
+  SortEvent,
+} from 'src/app/shared/directives/NgbdSortableHeader';
 import { TableService } from 'src/app/shared/service/table.service';
 import { ListPagesDB } from 'src/app/shared/tables/list-pages';
 import { MENUDB, MenuDB } from 'src/app/shared/tables/menu';
@@ -10,10 +13,9 @@ import { MENUDB, MenuDB } from 'src/app/shared/tables/menu';
   selector: 'app-list-menu',
   templateUrl: './list-menu.component.html',
   styleUrls: ['./list-menu.component.scss'],
-  providers: [TableService, DecimalPipe]
+  providers: [TableService, DecimalPipe],
 })
 export class ListMenuComponent implements OnInit {
-
   public selected = [];
 
   public tableItem$: Observable<ListPagesDB[]>;
@@ -23,14 +25,14 @@ export class ListMenuComponent implements OnInit {
   constructor(public service: TableService) {
     this.tableItem$ = service.tableItem$;
     this.total$ = service.total$;
-    this.service.setUserData(MENUDB)
+    this.service.setUserData(MENUDB);
   }
 
   @ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader>;
 
   onSort({ column, direction }: SortEvent) {
     // resetting other headers
-    this.headers.forEach((header) => {
+    this.headers.forEach(header => {
       if (header.sortable !== column) {
         header.direction = '';
       }
@@ -38,7 +40,6 @@ export class ListMenuComponent implements OnInit {
 
     this.service.sortColumn = column;
     this.service.sortDirection = direction;
-
   }
 
   onSelect({ selected }) {
@@ -46,6 +47,5 @@ export class ListMenuComponent implements OnInit {
     this.selected.push(...selected);
   }
 
-  ngOnInit() { }
-
+  ngOnInit() {}
 }

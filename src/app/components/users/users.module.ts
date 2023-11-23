@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
 // import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { UsersRoutingModule } from './users-routing.module';
 import { ListUserComponent } from './list-user/list-user.component';
@@ -18,7 +17,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     NgbModule,
     SharedModule,
     ReactiveFormsModule,
-    UsersRoutingModule
-  ]
+    UsersRoutingModule,
+  ],
 })
-export class UsersModule { }
+export class UsersModule {}

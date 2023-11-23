@@ -11,24 +11,24 @@ const routes: Routes = [
         path: 'list-user',
         component: ListUserComponent,
         data: {
-          title: "User List",
-          breadcrumb: "User List"
-        }
+          title: 'User List',
+          breadcrumb: 'User List',
+        },
       },
       {
         path: 'create-user',
         component: CreateUserComponent,
         data: {
-          title: "Create User",
-          breadcrumb: "Create User"
-        }
-      }
-    ]
-  }
+          title: 'Create User',
+          breadcrumb: 'Create User',
+        },
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class UsersRoutingModule { }
+export class UsersRoutingModule {}

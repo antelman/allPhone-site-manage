@@ -5,19 +5,24 @@ import { environment } from '../../../../environments/environment';
 import { client } from '../../../../lib/appwrite';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductsService {
-
   collectionName = 'products';
   dataBase;
 
-  constructor() { 
+  constructor() {
     this.dataBase = new Databases(client);
   }
 
   addProduct(product) {
-    return from(this.dataBase.createDocument(environment.databaseId, this.collectionName, ID.unique(), product));
+    return from(
+      this.dataBase.createDocument(
+        environment.databaseId,
+        this.collectionName,
+        ID.unique(),
+        product
+      )
+    );
   }
-
 }

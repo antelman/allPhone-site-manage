@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   databaseId: 'AllPhone-Dev',
   projectId: '655a24482b14ff63e4f9',
-  apiEndpoint: 'https://cloud.appwrite.io/v1'
+  apiEndpoint: 'https://cloud.appwrite.io/v1',
 };
 
 /*

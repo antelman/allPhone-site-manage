@@ -4,7 +4,7 @@ import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 @Component({
   selector: 'app-create-page',
   templateUrl: './create-page.component.html',
-  styleUrls: ['./create-page.component.scss']
+  styleUrls: ['./create-page.component.scss'],
 })
 export class CreatePageComponent implements OnInit {
   public generalForm: UntypedFormGroup;
@@ -20,18 +20,16 @@ export class CreatePageComponent implements OnInit {
     this.generalForm = this.formBuilder.group({
       name: [''],
       desc: [''],
-      status: ['']
-    })
+      status: [''],
+    });
   }
   createSeoForm() {
     this.seoForm = this.formBuilder.group({
       title: [''],
       keyword: [''],
-      meta_desc: ['']
-    })
+      meta_desc: [''],
+    });
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

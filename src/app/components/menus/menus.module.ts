@@ -11,11 +11,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [ListMenuComponent, CreateMenuComponent],
-  imports: [
-    CommonModule,
-    MenusRoutingModule,
-    NgbModule,
-    SharedModule
-  ]
+  imports: [CommonModule, MenusRoutingModule, NgbModule, SharedModule],
 })
-export class MenusModule { }
+export class MenusModule {}

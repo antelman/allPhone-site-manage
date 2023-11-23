@@ -1,9 +1,15 @@
 import { DecimalPipe } from '@angular/common';
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Observable } from 'rxjs';
-import { NgbdSortableHeader, SortEvent } from 'src/app/shared/directives/NgbdSortableHeader';
+import {
+  NgbdSortableHeader,
+  SortEvent,
+} from 'src/app/shared/directives/NgbdSortableHeader';
 import { TableService } from 'src/app/shared/service/table.service';
-import { TransactionsDB, TRANSACTIONDB } from 'src/app/shared/tables/transactions';
+import {
+  TransactionsDB,
+  TRANSACTIONDB,
+} from 'src/app/shared/tables/transactions';
 
 @Component({
   selector: 'app-transactions',
@@ -11,9 +17,7 @@ import { TransactionsDB, TRANSACTIONDB } from 'src/app/shared/tables/transaction
   styleUrls: ['./transactions.component.scss'],
   providers: [TableService, DecimalPipe],
 })
-
 export class TransactionsComponent implements OnInit {
-
   public tableItem$: Observable<TransactionsDB[]>;
   public searchText;
   total$: Observable<number>;
@@ -21,14 +25,14 @@ export class TransactionsComponent implements OnInit {
   constructor(public service: TableService) {
     this.tableItem$ = service.tableItem$;
     this.total$ = service.total$;
-    this.service.setUserData(TRANSACTIONDB)
+    this.service.setUserData(TRANSACTIONDB);
   }
 
   @ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader>;
 
   onSort({ column, direction }: SortEvent) {
     // resetting other headers
-    this.headers.forEach((header) => {
+    this.headers.forEach(header => {
       if (header.sortable !== column) {
         header.direction = '';
       }
@@ -36,11 +40,7 @@ export class TransactionsComponent implements OnInit {
 
     this.service.sortColumn = column;
     this.service.sortDirection = direction;
-
   }
 
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

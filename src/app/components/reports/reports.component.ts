@@ -3,17 +3,19 @@ import * as chartData from '../../shared/data/chart';
 import { ReportDB, REPORTDB } from 'src/app/shared/tables/report';
 import { Observable } from 'rxjs';
 import { TableService } from 'src/app/shared/service/table.service';
-import { NgbdSortableHeader, SortEvent } from 'src/app/shared/directives/NgbdSortableHeader';
+import {
+  NgbdSortableHeader,
+  SortEvent,
+} from 'src/app/shared/directives/NgbdSortableHeader';
 import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-reports',
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.scss'],
-  providers: [TableService, DecimalPipe]
+  providers: [TableService, DecimalPipe],
 })
 export class ReportsComponent implements OnInit {
-
   // lineChart
   public salesChartData = chartData.salesChartData;
   public salesChartLabels = chartData.salesChartLabels;
@@ -26,7 +28,7 @@ export class ReportsComponent implements OnInit {
   public columnChart1 = chartData.columnChart1;
   public lineChart = chartData.lineChart;
 
-  public chart5 = chartData.chart6
+  public chart5 = chartData.chart6;
 
   public tableItem$: Observable<ReportDB[]>;
   public searchText;
@@ -35,14 +37,14 @@ export class ReportsComponent implements OnInit {
   constructor(public service: TableService) {
     this.tableItem$ = service.tableItem$;
     this.total$ = service.total$;
-    this.service.setUserData(REPORTDB)
+    this.service.setUserData(REPORTDB);
   }
 
   @ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader>;
 
   onSort({ column, direction }: SortEvent) {
     // resetting other headers
-    this.headers.forEach((header) => {
+    this.headers.forEach(header => {
       if (header.sortable !== column) {
         header.direction = '';
       }
@@ -50,11 +52,7 @@ export class ReportsComponent implements OnInit {
 
     this.service.sortColumn = column;
     this.service.sortDirection = direction;
-
   }
 
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

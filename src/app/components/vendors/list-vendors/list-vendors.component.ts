@@ -4,7 +4,7 @@ import { vendorsDB } from '../../../shared/tables/vendor-list';
 @Component({
   selector: 'app-list-vendors',
   templateUrl: './list-vendors.component.html',
-  styleUrls: ['./list-vendors.component.scss']
+  styleUrls: ['./list-vendors.component.scss'],
 })
 export class ListVendorsComponent implements OnInit {
   public vendors = [];
@@ -15,7 +15,7 @@ export class ListVendorsComponent implements OnInit {
 
   public settings = {
     actions: {
-      position: 'right'
+      position: 'right',
     },
     columns: {
       vendor: {
@@ -23,24 +23,22 @@ export class ListVendorsComponent implements OnInit {
         type: 'html',
       },
       products: {
-        title: 'Products'
+        title: 'Products',
       },
       store_name: {
-        title: 'Store Name'
+        title: 'Store Name',
       },
       date: {
-        title: 'Date'
+        title: 'Date',
       },
       balance: {
         title: 'Wallet Balance',
       },
       revenue: {
         title: 'Revenue',
-      }
+      },
     },
   };
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

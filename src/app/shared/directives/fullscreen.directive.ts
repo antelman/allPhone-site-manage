@@ -2,7 +2,7 @@ import { Directive, HostListener } from '@angular/core';
 import screenfull from 'screenfull';
 
 @Directive({
-  selector: '[toggleFullscreen]'
+  selector: '[toggleFullscreen]',
 })
 export class ToggleFullscreenDirective {
   @HostListener('click') onClick() {

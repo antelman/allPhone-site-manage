@@ -10,16 +10,16 @@ const routes: Routes = [
         path: '',
         component: MediaComponent,
         data: {
-          title: "Media",
-          breadcrumb: "Media"
-        }
-      }
-    ]
-  }
+          title: 'Media',
+          breadcrumb: 'Media',
+        },
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class MediaRoutingModule { }
+export class MediaRoutingModule {}

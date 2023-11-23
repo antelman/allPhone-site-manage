@@ -2,7 +2,7 @@ import { DecimalPipe } from '@angular/common';
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
-import { NgbdSortableHeader } from "src/app/shared/directives/NgbdSortableHeader";
+import { NgbdSortableHeader } from 'src/app/shared/directives/NgbdSortableHeader';
 import { TableService } from 'src/app/shared/service/table.service';
 import { CATEGORY, Category } from '../../../shared/tables/category';
 import { CategoriesService } from './categories.service';
@@ -13,8 +13,6 @@ import { CategoriesService } from './categories.service';
   styleUrls: ['./category.component.scss'],
   providers: [TableService, DecimalPipe],
 })
-
-
 export class CategoryComponent implements OnInit {
   public closeResult: string;
 
@@ -25,19 +23,22 @@ export class CategoryComponent implements OnInit {
   categoryDB;
   categoryName: string;
   categories = [];
-  
 
   @ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader>;
 
-  constructor(public service: TableService, private modalService: NgbModal, private categoriesService: CategoriesService) {
+  constructor(
+    public service: TableService,
+    private modalService: NgbModal,
+    private categoriesService: CategoriesService
+  ) {
     this.tableItem$ = service.tableItem$;
     this.total$ = service.total$;
-    this.service.setUserData(CATEGORY)
+    this.service.setUserData(CATEGORY);
   }
 
   onSort({ column, direction }) {
     // resetting other headers
-    this.headers.forEach((header) => {
+    this.headers.forEach(header => {
       if (header.sortable !== column) {
         header.direction = '';
       }
@@ -45,17 +46,21 @@ export class CategoryComponent implements OnInit {
 
     this.service.sortColumn = column;
     this.service.sortDirection = direction;
-
   }
 
   open(content) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-      console.info(this.closeResult)
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-      console.info(this.closeResult)
-    });
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        result => {
+          this.closeResult = `Closed with: ${result}`;
+          console.info(this.closeResult);
+        },
+        reason => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+          console.info(this.closeResult);
+        }
+      );
   }
 
   private getDismissReason(reason: any): string {
@@ -68,30 +73,28 @@ export class CategoryComponent implements OnInit {
     }
   }
 
-
   ngOnInit() {
     this.categoriesService.getAllCategories().subscribe({
       next: res => {
         this.categories = res['documents'];
         console.log(res);
-       },
-      error: (error) => {
+      },
+      error: error => {
         console.log(error);
-       },
-    })
+      },
+    });
 
-  //   client.subscribe([`databases.${environment.dbName}.collections.${this.categoriesService.collectionName}.documents`], response => {
-  //     // Callback will be executed on changes for documents A and all files.
-  //     console.log(response);
-  // });
-
+    //   client.subscribe([`databases.${environment.dbName}.collections.${this.categoriesService.collectionName}.documents`], response => {
+    //     // Callback will be executed on changes for documents A and all files.
+    //     console.log(response);
+    // });
   }
 
   addCategory(dialog) {
     this.categoriesService.addCategory(this.categoryName).subscribe({
-      next: (res) => this.categories.push(res),
-      error: (err) => console.log(err)
+      next: res => this.categories.push(res),
+      error: err => console.log(err),
     });
-    dialog.dismiss('Save click')
+    dialog.dismiss('Save click');
   }
 }

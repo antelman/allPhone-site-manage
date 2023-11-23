@@ -15,7 +15,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     NgbModule,
     ReactiveFormsModule,
     SharedModule,
-    FormsModule
-  ]
+    FormsModule,
+  ],
 })
-export class CouponsModule { }
+export class CouponsModule {}

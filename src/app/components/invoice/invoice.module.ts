@@ -8,11 +8,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [InvoiceComponent],
-  imports: [
-    CommonModule,
-    InvoiceRoutingModule,
-    SharedModule,
-    NgbModule
-  ]
+  imports: [CommonModule, InvoiceRoutingModule, SharedModule, NgbModule],
 })
-export class InvoiceModule { }
+export class InvoiceModule {}

@@ -10,11 +10,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [ListVendorsComponent, CreateVendorsComponent],
-  imports: [
-    CommonModule,
-    VendorsRoutingModule,
-    ReactiveFormsModule,
-    NgbModule,
-  ]
+  imports: [CommonModule, VendorsRoutingModule, ReactiveFormsModule, NgbModule],
 })
-export class VendorsModule { }
+export class VendorsModule {}

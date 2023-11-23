@@ -15,47 +15,47 @@ const routes: Routes = [
         component: CategoryComponent,
         data: {
           title: 'קטגוריה',
-          breadcrumb: 'קטגוריה'
-        }
+          breadcrumb: 'קטגוריה',
+        },
       },
       {
         path: 'sub-category',
         component: SubCategoryComponent,
         data: {
           title: 'תת קטגוריה',
-          breadcrumb: 'תת קטגוריה'
-        }
+          breadcrumb: 'תת קטגוריה',
+        },
       },
       {
         path: 'product-list',
         component: ProductListComponent,
         data: {
           title: 'רשימת מוצרים',
-          breadcrumb: 'רשימת מוצרים'
-        }
+          breadcrumb: 'רשימת מוצרים',
+        },
       },
       {
         path: 'product-detail',
         component: ProductDetailComponent,
         data: {
           title: 'פרטי מוצר',
-          breadcrumb: 'פרטי מוצר'
-        }
+          breadcrumb: 'פרטי מוצר',
+        },
       },
       {
         path: 'add-product',
         component: AddProductComponent,
         data: {
           title: 'הוספת מוצר',
-          breadcrumb: 'הוספת מוצר'
-        }
-      }
-    ]
-  }
+          breadcrumb: 'הוספת מוצר',
+        },
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ProductsRoutingModule { }
+export class ProductsRoutingModule {}

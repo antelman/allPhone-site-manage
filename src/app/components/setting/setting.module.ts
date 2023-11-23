@@ -15,7 +15,7 @@ import { SharedModule } from '../../shared/shared.module';
     NgbModule,
     ReactiveFormsModule,
     SettingRoutingModule,
-    SharedModule
-  ]
+    SharedModule,
+  ],
 })
-export class SettingModule { }
+export class SettingModule {}

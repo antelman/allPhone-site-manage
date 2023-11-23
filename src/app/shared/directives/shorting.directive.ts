@@ -1,4 +1,3 @@
-
 export type SortColumn = any | '';
 export type SortDirection = 'asc' | 'desc' | '';
 export const rotate: { [key: string]: SortDirection } = {
@@ -11,5 +10,3 @@ export interface SortEvent {
   column: SortColumn;
   direction: SortDirection;
 }
-
-

@@ -7,7 +7,6 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-
 @NgModule({
   declarations: [MediaComponent],
   imports: [
@@ -15,7 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MediaRoutingModule,
     NgxDropzoneModule,
     SharedModule,
-    NgbModule
-  ]
+    NgbModule,
+  ],
 })
-export class MediaModule { }
+export class MediaModule {}

@@ -10,7 +10,6 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SharedModule } from '../../shared/shared.module';
 import { AuthService } from './auth.service';
 
-
 @NgModule({
   declarations: [LoginComponent],
   imports: [
@@ -19,8 +18,8 @@ import { AuthService } from './auth.service';
     ReactiveFormsModule,
     CarouselModule,
     SharedModule,
-    NgbModule
+    NgbModule,
   ],
-  providers: [AuthService]
+  providers: [AuthService],
 })
-export class AuthModule { }
+export class AuthModule {}

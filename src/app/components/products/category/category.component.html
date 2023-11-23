@@ -6,58 +6,58 @@
         <div class="card-header d-flex justify-content-between">
           <h3 class="align-self-center m-0">רשימת קטגוריות</h3>
           <button
-              type="button"
-              class="btn btn-primary"
-              data-toggle="modal"
-              data-original-title="test"
-              data-target="#exampleModal"
-              (click)="open(content)">
-              קטגוריה חדשה
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-original-title="test"
+            data-target="#exampleModal"
+            (click)="open(content)">
+            קטגוריה חדשה
           </button>
-					<ng-template #content let-modal>
-						<div class="modal-header">
-							<h5 class="modal-title f-w-600" id="exampleModalLabel">
-								קטגוריה חדשה
-							</h5>
-							<button
-								type="button"
-								class="close"
-								aria-label="Close"
-								(click)="modal.dismiss('Cross click')">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							<div class="form">
-								<div class="form-group">
-									<label for="validationCustom01" class="mb-1">שם:</label>
-									<input
-										class="form-control"
-										type="text"
-										[(ngModel)]="categoryName" />
-								</div>
-								<!-- <div class="form-group mb-0">
+          <ng-template #content let-modal>
+            <div class="modal-header">
+              <h5 class="modal-title f-w-600" id="exampleModalLabel">
+                קטגוריה חדשה
+              </h5>
+              <button
+                type="button"
+                class="close"
+                aria-label="Close"
+                (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form">
+                <div class="form-group">
+                  <label for="validationCustom01" class="mb-1">שם:</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    [(ngModel)]="categoryName" />
+                </div>
+                <!-- <div class="form-group mb-0">
 										<label for="validationCustom02" class="mb-1">Category Image :</label>
 										<input class="form-control" id="validationCustom02" type="file">
 									</div> -->
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button
-								type="button"
-								class="btn btn-primary"
-								(click)="addCategory(modal)">
-								Save
-							</button>
-							<button
-								class="btn btn-secondary"
-								type="button"
-								data-dismiss="modal"
-								(click)="modal.dismiss('Cross click')">
-								Close
-							</button>
-						</div>
-					</ng-template>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="addCategory(modal)">
+                Save
+              </button>
+              <button
+                class="btn btn-secondary"
+                type="button"
+                data-dismiss="modal"
+                (click)="modal.dismiss('Cross click')">
+                Close
+              </button>
+            </div>
+          </ng-template>
         </div>
         <div class="card-body">
           <div id="batchDelete" class="category-table custom-datatable">
@@ -99,7 +99,7 @@
                   <tr *ngFor="let catgory of categories; let i = index">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{ catgory.categoryName }}</td>
-                    <td>{{ catgory.$createdAt | date : "HH:mm dd/mm/yy" }}</td>
+                    <td>{{ catgory.$createdAt | date: 'HH:mm dd/mm/yy' }}</td>
                     <!-- <td><i class='fa fa-circle {{catgory.status}} f-12'></i></td> -->
                     <td>{{ catgory.createdBy }}</td>
                     <td>

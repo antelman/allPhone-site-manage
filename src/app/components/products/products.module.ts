@@ -18,9 +18,13 @@ import { SubCategoryComponent } from './sub-category/sub-category.component';
 // search module
 import { SharedModule } from 'src/app/shared/shared.module';
 
-
 @NgModule({
-  declarations: [CategoryComponent, SubCategoryComponent, ProductListComponent, AddProductComponent, ProductDetailComponent
+  declarations: [
+    CategoryComponent,
+    SubCategoryComponent,
+    ProductListComponent,
+    AddProductComponent,
+    ProductDetailComponent,
   ],
   imports: [
     CommonModule,
@@ -31,12 +35,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
     GalleryModule,
     CKEditorModule,
     NgxDropzoneModule,
-    SharedModule
+    SharedModule,
   ],
   exports: [SubCategoryComponent],
   bootstrap: [SubCategoryComponent],
-  providers: [
-    NgbActiveModal
-  ]
+  providers: [NgbActiveModal],
 })
-export class ProductsModule { }
+export class ProductsModule {}

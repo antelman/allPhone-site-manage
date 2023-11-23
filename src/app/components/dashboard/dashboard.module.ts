@@ -18,7 +18,7 @@ import { SharedModule } from '../../shared/shared.module';
     NgChartsModule,
     Ng2GoogleChartsModule,
     NgxChartsModule,
-    ChartistModule
-  ]
+    ChartistModule,
+  ],
 })
-export class DashboardModule { }
+export class DashboardModule {}

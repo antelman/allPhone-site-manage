@@ -8,14 +8,8 @@ import { TaxesComponent } from './taxes/taxes.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-
 @NgModule({
   declarations: [TranslationsComponent, RatesComponent, TaxesComponent],
-  imports: [
-    CommonModule,
-    LocalizationRoutingModule,
-    SharedModule,
-    NgbModule
-  ]
+  imports: [CommonModule, LocalizationRoutingModule, SharedModule, NgbModule],
 })
-export class LocalizationModule { }
+export class LocalizationModule {}

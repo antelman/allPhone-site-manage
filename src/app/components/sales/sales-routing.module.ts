@@ -11,24 +11,24 @@ const routes: Routes = [
         path: 'orders',
         component: OrdersComponent,
         data: {
-          title: "Orders",
-          breadcrumb: "Orders"
-        }
+          title: 'Orders',
+          breadcrumb: 'Orders',
+        },
       },
       {
         path: 'transactions',
         component: TransactionsComponent,
         data: {
-          title: "Transactions",
-          breadcrumb: "Transactions"
-        }
-      }
-    ]
-  }
+          title: 'Transactions',
+          breadcrumb: 'Transactions',
+        },
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class SalesRoutingModule { }
+export class SalesRoutingModule {}

@@ -11,24 +11,24 @@ const routes: Routes = [
         path: 'list-coupons',
         component: ListCouponComponent,
         data: {
-          title: "List Coupons",
-          breadcrumb: "List Coupons"
-        }
+          title: 'List Coupons',
+          breadcrumb: 'List Coupons',
+        },
       },
       {
         path: 'create-coupons',
         component: CreateCouponComponent,
         data: {
-          title: "Create Coupon",
-          breadcrumb: "Create Coupons"
-        }
-      }
-    ]
-  }
+          title: 'Create Coupon',
+          breadcrumb: 'Create Coupons',
+        },
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class CouponsRoutingModule { }
+export class CouponsRoutingModule {}

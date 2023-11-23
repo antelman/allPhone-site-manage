@@ -11,24 +11,24 @@ const routes: Routes = [
         path: 'list-page',
         component: ListPageComponent,
         data: {
-          title: "List Page",
-          breadcrumb: "List Page"
-        }
+          title: 'List Page',
+          breadcrumb: 'List Page',
+        },
       },
       {
         path: 'create-page',
         component: CreatePageComponent,
         data: {
-          title: "Create Page",
-          breadcrumb: "Create Page"
-        }
-      }
-    ]
-  }
+          title: 'Create Page',
+          breadcrumb: 'Create Page',
+        },
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class PagesRoutingModule { }
+export class PagesRoutingModule {}
